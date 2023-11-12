@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <link rel="stylesheet" href="estilo.css">
+    <title>Login</title>
+</head>
+<body>
+    <div id="container_entrada">
+        <div id="">
+            <h1 id="titulo_login">Atletas do Botafogo em 2023-02</h1>
+            <p id="descricao_login">Criado com objetivos exclusivamente didáticos para a disciplina Desenvolvimento Web do Ibmec Rio.</p>
+        </div>
+    
+        <form>
+            <input type="password" id="senha" placeholder="Informe a senha." onkeypress="verificarTecla(event)">
+            <input type="button" id="botao" value="Entrar" onclick="verificaSenha()">
+        </form>
+        <p>Efetue login com a senha: SENHA</p>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>
