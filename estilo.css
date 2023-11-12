@@ -11,6 +11,8 @@ body{
     color: white;
 }
 
+
+
 /*Estilo da página de login*/
 #container_entrada{
     position: absolute;
@@ -55,6 +57,10 @@ input[type="password"]{
      margin-top: 0px;
      margin-bottom: 0px;
  }
+
+
+
+
 
 /*Estilo da página principal*/
 header{
@@ -111,27 +117,39 @@ h1{
     background-color: rgba(255, 255, 255, 0.6);
 }
 
-#elenco {
-    display: flex;
+#elenco{
+    display: grid;
     width: 100%;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     list-style: none;
-    max-width: 1200px;
+    max-width: 1200px ;
 }
 
+/* Regra para uma coluna até 768px */
+@media (max-width: 768px) {
+    #elenco {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Regra para duas colunas até 1024px */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .elenco {
-        width: 48%;
+    #elenco {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
-@media (min-width: 1025px) and (max-width: 1200px) {
-    .elenco {
-        width: 23%;
+/* Regra para quatro colunas depois de 1024px */
+@media (min-width: 1025px) {
+    #elenco {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
+
+
+
 
 /*Estilo da página de detalhes*/
 #imagem_atleta{
