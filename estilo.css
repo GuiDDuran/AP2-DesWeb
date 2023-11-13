@@ -152,14 +152,25 @@ h1{
 
 
 /*Estilo da página de detalhes*/
+
+#detalhes_atleta{
+    display: flex;
+}
+
+#descricao_atleta{
+    display: block;
+}
+
+#nome_completo_atleta{
+    display: block;
+}
+
 #imagem_atleta{
     margin-top: 16px;
     margin-left: 16px;
-    float: left;
 }
 
 #nome_atleta{
-    clear: left;
     text-transform: uppercase;
     font-weight: bold;
 }

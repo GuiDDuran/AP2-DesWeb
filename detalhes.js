@@ -18,8 +18,22 @@ document.addEventListener("DOMContentLoaded", function(){
     const atleta_id = params.get('id');
 
     function buscaAtleta(id){
+
+        if(id > 60){
+            detalhes_atleta.innerHTML = "<p>Atleta não encontrado(a)!!!</p>";
+            detalhes_atleta.style.fontFamily = 'Alumni Sans Inline One, sans-serif';
+            detalhes_atleta.style.fontSize = '50px'
+            return;
+        }
+
         fetch(`https://botafogo-atletas.mange.li/${id}`)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok){
+                throw new Error("Erro")
+            }
+            return response.json()
+        })
+
         .then(atleta => {
             imagem_atleta.src = atleta.imagem;
             nome_atleta.textContent = `${atleta.nome}`;
@@ -30,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function(){
             altura_atleta.textContent = `Altura: ${atleta.altura}`;
         })
 
-        //Não está funcionando
         .catch(error => {
             console.error('Erro ao buscar detalhes do atleta:', error);
             detalhes_atleta.innerHTML = "<p>Erro ao buscar detalhes do atleta.</p>";
