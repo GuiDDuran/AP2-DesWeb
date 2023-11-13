@@ -38,7 +38,7 @@ function carregarJogadores(genero){
             detalhesAtleta.className = 'atleta-detalhes';
             detalhesAtleta.innerHTML = ` 
                 <p class="saiba-mais">Saiba mais</p>
-                <p class="nome-atleta">${atleta.nome_completo}</p> 
+                <p class="nome-atleta" style="font-family: Alumni Sans Inline One, sans-serif; font-size: 28px; letter-spacing: .5px;">${atleta.nome}</p> 
             `;
 
             cartaoAtleta.appendChild(imagemAtleta);
