@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const logout = document.getElementById("logout");
     logout.addEventListener("click", () => {
-        window.location.href = `login.html`;
+        window.location.href = `index.html`;
     });
 
 
