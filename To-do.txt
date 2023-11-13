@@ -1,17 +1,13 @@
 Página de Login
     -É preciso usar armazenamento local para viabilizar a solução de autorização.
-    -A listagem de atletas e a página de detalhes só devem ser acessíveis a usuários autorizados.
+
     -Responsividade da página (vertical até 768px).
 
 Página Principal
-    -Select até 768px
-    -Estilizar o cartão dos jogadores.
     -A listagem de atletas e a página de detalhes só devem ser acessíveis a usuários autorizados.
-    -Mensagem de "Carregando..." ao clicar em algum botão.
-
+    
 Página de detalhes
     -Não deve ser possível acessar a página de detalhes sem autorização.
-    -Erros na obtenção dos dados para a construção da página de detalhes devem gerar uma mensagem na tela.
+
     -Estilizar a página de detalhes.
     -Responsividade da página (vertical até 768px).
-    -Mensagem de "Carregando..." ao clicar em algum botão.

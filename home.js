@@ -9,10 +9,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const btn_fem = document.getElementById("btn_masc");
     const btn_masc = document.getElementById("btn_fem");
     const btn_all = document.getElementById("btn_all");
-
     btn_fem.addEventListener("click", () => carregarJogadores("masculino"));
     btn_masc.addEventListener("click", () => carregarJogadores("feminino"));
     btn_all.addEventListener("click", () => carregarJogadores("all"));
+
+    const selectEscolhas = document.getElementById("select-escolhas");
+    selectEscolhas.addEventListener("change", function () {
+        const generoSelecionado = this.value;
+        carregarJogadores(generoSelecionado);
+    });
 
 
 function carregarJogadores(genero){
@@ -26,33 +31,29 @@ function carregarJogadores(genero){
 
             const cartaoAtleta = document.createElement('div');
             cartaoAtleta.className = 'atleta-cartao';
+            cartaoAtleta.style.width = 'min-content';
+            cartaoAtleta.style.margin = 'auto';
+            cartaoAtleta.style.padding = '16px';
+            cartaoAtleta.style.backgroundColor = 'grey';
+            cartaoAtleta.style.cursor = 'pointer';
+            cartaoAtleta.style.borderRadius = '3px';
+            cartaoAtleta.addEventListener('click', () => {
+                window.location.href = `detalhes.html?id=${atleta.id}`;
+           });
 
             const imagemAtleta = document.createElement('img');
             imagemAtleta.className = 'atleta-img';
             imagemAtleta.src = atleta.imagem;
-            imagemAtleta.addEventListener('click', () => {
-                window.location.href = `detalhes.html?id=${atleta.id}`;
-            });
 
             const detalhesAtleta = document.createElement('div');
             detalhesAtleta.className = 'atleta-detalhes';
             detalhesAtleta.innerHTML = ` 
-                <p class="saiba-mais">Saiba mais</p>
-                <p class="nome-atleta" style="font-family: Alumni Sans Inline One, sans-serif; font-size: 28px; letter-spacing: .5px;">${atleta.nome}</p> 
+                <p class="nome-atleta" style="color:black; font-family: Alumni Sans Inline One, sans-serif; font-size: 28px; letter-spacing: .5px; margin: 10px;">${atleta.nome}</p> 
+                <p class="saiba-mais" style="color:black; font-family: Alumni Sans Inline One, sans-serif; font-size: 20px; letter-spacing: .5px; background-color: white; padding: 10px; margin: 10px; border-radius: 3px;">Saiba mais</p>
             `;
 
             cartaoAtleta.appendChild(imagemAtleta);
             cartaoAtleta.appendChild(detalhesAtleta);
-
-            //Torna possível o acesso á página de detalhes ao clicar em saiba mais ou no nome do atleta
-            const saibaMais = detalhesAtleta.querySelector('.saiba-mais');
-            const nomeAtleta = detalhesAtleta.querySelector('.nome-atleta');
-            saibaMais.addEventListener('click', () => {
-                 window.location.href = `detalhes.html?id=${atleta.id}`;
-            });
-            nomeAtleta.addEventListener('click', () => {
-                window.location.href = `detalhes.html?id=${atleta.id}`;
-            });
 
             containerElenco.appendChild(cartaoAtleta);
 
