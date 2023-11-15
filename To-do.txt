@@ -6,6 +6,3 @@ Página Principal
     
 Página de detalhes
     -Não deve ser possível acessar a página de detalhes sem autorização.
-
-    -Estilizar a página de detalhes.
-    -Responsividade da página (vertical até 768px).
