@@ -10,16 +10,18 @@
 </head>
 <body>
     <div id="container_entrada">
-        <div id="">
+        <div id="informacoes_pag">
             <h1 id="titulo_login">Atletas do Botafogo em 2023-02</h1>
             <p id="descricao_login">Criado com objetivos exclusivamente didáticos para a disciplina Desenvolvimento Web do Ibmec Rio.</p>
         </div>
     
-        <form>
-            <input type="password" id="senha" placeholder="Informe a senha." onkeypress="verificarTecla(event)">
-            <input type="button" id="botao" value="Entrar" onclick="verificaSenha()">
-        </form>
-        <p>Efetue login com a senha: SENHA</p>
+        <div id="preencher_pag">
+            <form>
+                <input type="password" id="senha" placeholder="Informe a senha." onkeypress="verificarTecla(event)">
+                <input type="button" id="botao" value="Entrar" onclick="verificaSenha()">
+            </form>
+            <p>Efetue login com a senha: SENHA</p>
+        </div>
     </div>
 
     <script src="login.js"></script>

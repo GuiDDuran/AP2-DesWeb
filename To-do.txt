@@ -1,8 +1,6 @@
 Página de Login
     -É preciso usar armazenamento local para viabilizar a solução de autorização.
 
-    -Responsividade da página (vertical até 768px).
-
 Página Principal
     -A listagem de atletas e a página de detalhes só devem ser acessíveis a usuários autorizados.
     

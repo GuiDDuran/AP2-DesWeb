@@ -14,33 +14,56 @@ body{
 
 
 /*Estilo da página de login*/
-#container_entrada{
+#container_entrada {
     position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 950px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
- }
+}
+
+#informacoes_pag, #preencher_pag {
+    width: 50%; /* Ajuste conforme necessário */
+}
+
+/* Estilos adicionais para o layout */
+#informacoes_pag { 
+    padding: 10px;
+}
+
+#preencher_pag {
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    #container_entrada {
+        flex-direction: column;
+    }
+}
  
- form{
-     text-align: center;
-     margin-top: 36px;
-     top: 50%;
-     left: 50%;
- }
+form{
+    text-align: center;
+    margin-top: 36px;
+    top: 50%;
+    left: 50%;
+}
  
- #botao{
-     background-color: white;
-     color: black;
-     font-size: 13px;
-     margin: 10px;
-     padding: 8px 12px;
-     border-style: none;
-     justify-content: center;
-     cursor: pointer;
-     border-radius: 3px;
+#botao{
+    background-color: white;
+    color: black;
+    font-size: 13px;
+    margin: 10px;
+    padding: 8px 12px;
+    border-style: none;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 3px;
  }
 
- #botao:hover{
+#botao:hover{
     background-color: rgba(255, 255, 255, 0.6);
 }
 
@@ -48,14 +71,14 @@ input[type="password"]{
     padding: 7px;
 }
  
- #titulo_login{
-     margin: 0px;
-     padding: 0px;
+#titulo_login{
+    margin: 0px;
+    padding: 0px;
  }
  
- #descricao_login{
-     margin-top: 0px;
-     margin-bottom: 0px;
+#descricao_login{
+    margin-top: 0px;
+    margin-bottom: 0px;
  }
 
 
@@ -176,8 +199,27 @@ h1{
 
 /*Estilo da página de detalhes*/
 
-#detalhes_atleta{
+#detalhes_atleta {
     display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 1em;
+    margin: 200px 50px 20px 50px;
+}
+
+#info_atleta{
+    text-align: left;
+}
+
+#geral_atleta {
+    width: fit-content;
+}
+
+@media (max-width: 768px) {
+    #detalhes_atleta {
+        flex-direction: column;
+        margin-top: 100px;
+    }
 }
 
 #descricao_atleta{
@@ -189,8 +231,7 @@ h1{
 }
 
 #imagem_atleta{
-    margin-top: 16px;
-    margin-left: 16px;
+    margin: 16px;
 }
 
 #nome_atleta{
