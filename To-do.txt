@@ -1,8 +1,2 @@
-Página de Login
-    -É preciso usar armazenamento local para viabilizar a solução de autorização.
-
-Página Principal
-    -A listagem de atletas e a página de detalhes só devem ser acessíveis a usuários autorizados.
-    
 Página de detalhes
     -Não deve ser possível acessar a página de detalhes sem autorização.
