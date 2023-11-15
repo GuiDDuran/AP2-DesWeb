@@ -118,6 +118,17 @@ h1{
     background-color: rgba(255, 255, 255, 0.6);
 }
 
+#msg_carregando{
+    font-family: 'Alumni Sans Inline One', sans-serif;;
+    font-size: 36px;
+    letter-spacing: 2px;
+    color: rgb(255, 255, 255);
+    text-shadow: #333;
+    text-align: center;
+    padding: 2%;
+    margin-top: 20px;
+}
+
 #barra_escolhas{
     display: flex;
     flex-direction: column;
@@ -140,7 +151,7 @@ h1{
     background-color: rgba(255, 255, 255, 0.6);
 }
 
-#select-escolhas{
+#select_escolhas{
     background-color: white;
     color: black;
     font-size: 24px;
@@ -154,7 +165,7 @@ h1{
 }
 
 @media (max-width: 768px) {
-    #select-escolhas {
+    #select_escolhas {
         display: block;
     }
 
@@ -194,12 +205,38 @@ h1{
     }
 }
 
+.atleta-cartao{
+    width: min-content;
+    margin: auto;
+    padding: 16px;
+    background-color: grey;
+    cursor: pointer;
+    border-radius: 3px;
+}
 
+.nome-atleta{
+    color:black; 
+    font-family: Alumni Sans Inline One, sans-serif; 
+    font-size: 28px; 
+    letter-spacing: .5px; 
+    margin: 10px;
+}
+
+.saiba-mais{
+    color:black; 
+    font-family: Alumni Sans Inline One, sans-serif; 
+    font-size: 20px; 
+    letter-spacing: .5px; 
+    background-color: white; 
+    padding: 10px; 
+    margin: 10px; 
+    border-radius: 3px;
+}
 
 
 /*Estilo da página de detalhes*/
 
-#detalhes_atleta {
+#atleta_detalhes {
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -207,39 +244,32 @@ h1{
     margin: 200px 50px 20px 50px;
 }
 
-#info_atleta{
+#atleta_info{
     text-align: left;
+    font-size: 20px;
 }
 
-#geral_atleta {
+#atleta_geral {
     width: fit-content;
 }
 
 @media (max-width: 768px) {
-    #detalhes_atleta {
+    #atleta_detalhes {
         flex-direction: column;
-        margin-top: 100px;
+        margin-top: 70px;
     }
 }
 
-#descricao_atleta{
-    display: block;
-}
-
-#nome_completo_atleta{
-    display: block;
-}
-
-#imagem_atleta{
+#atleta_imagem{
     margin: 16px;
 }
 
-#nome_atleta{
+#atleta_nome{
     text-transform: uppercase;
     font-weight: bold;
 }
 
-#posicao_atleta{
+#atleta_posicao{
     text-transform: uppercase;
     font-weight: bold;
 }

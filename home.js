@@ -5,62 +5,54 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = `index.html`;
     });
 
+    const btnMasc = document.getElementById("btn_masc");
+    const btnFem = document.getElementById("btn_fem");
+    const btnAll = document.getElementById("btn_all");
+    btnMasc.addEventListener("click", () => carregaAtletas("masculino"));
+    btnFem.addEventListener("click", () => carregaAtletas("feminino"));
+    btnAll.addEventListener("click", () => carregaAtletas("all"));
 
-    const btn_fem = document.getElementById("btn_masc");
-    const btn_masc = document.getElementById("btn_fem");
-    const btn_all = document.getElementById("btn_all");
-    btn_fem.addEventListener("click", () => carregarJogadores("masculino"));
-    btn_masc.addEventListener("click", () => carregarJogadores("feminino"));
-    btn_all.addEventListener("click", () => carregarJogadores("all"));
 
-    const selectEscolhas = document.getElementById("select-escolhas");
+    const selectEscolhas = document.getElementById("select_escolhas");
     selectEscolhas.addEventListener("change", function () {
         const generoSelecionado = this.value;
-        carregarJogadores(generoSelecionado);
+        carregaAtletas(generoSelecionado);
     });
 
 
-function carregarJogadores(genero){
+function carregaAtletas(genero){
     const containerElenco = document.getElementById("elenco");
     containerElenco.innerHTML = '';
+    document.getElementById('msg_carregando').style.display = 'block';
 
     fetch(`https://botafogo-atletas.mange.li/${genero}`)
     .then(response => response.json())
     .then(data => {
         data.forEach(atleta => {
-
-            const cartaoAtleta = document.createElement('div');
-            cartaoAtleta.className = 'atleta-cartao';
-            cartaoAtleta.style.width = 'min-content';
-            cartaoAtleta.style.margin = 'auto';
-            cartaoAtleta.style.padding = '16px';
-            cartaoAtleta.style.backgroundColor = 'grey';
-            cartaoAtleta.style.cursor = 'pointer';
-            cartaoAtleta.style.borderRadius = '3px';
-            cartaoAtleta.addEventListener('click', () => {
+            const atletaCartao = document.createElement('div');
+            atletaCartao.className = 'atleta-cartao';
+            atletaCartao.addEventListener('click', () => {
+                document.getElementById('msg_carregando').style.display = 'block';
                 window.location.href = `detalhes.html?id=${atleta.id}`;
            });
 
-            const imagemAtleta = document.createElement('img');
-            imagemAtleta.className = 'atleta-img';
-            imagemAtleta.src = atleta.imagem;
+            const ateltaImagem = document.createElement('img');
+            ateltaImagem.className = 'atleta-img';
+            ateltaImagem.src = atleta.imagem;
 
-            const detalhesAtleta = document.createElement('div');
-            detalhesAtleta.className = 'atleta-detalhes';
-            detalhesAtleta.innerHTML = ` 
-                <p class="nome-atleta" style="color:black; font-family: Alumni Sans Inline One, sans-serif; font-size: 28px; letter-spacing: .5px; margin: 10px;">${atleta.nome}</p> 
-                <p class="saiba-mais" style="color:black; font-family: Alumni Sans Inline One, sans-serif; font-size: 20px; letter-spacing: .5px; background-color: white; padding: 10px; margin: 10px; border-radius: 3px;">Saiba mais</p>
+            const atletaDetalhes = document.createElement('div');
+            atletaDetalhes.className = 'atleta-detalhes';
+            atletaDetalhes.innerHTML = ` 
+                <p class="nome-atleta">${atleta.nome}</p> 
+                <p class="saiba-mais">Saiba mais</p>
             `;
 
-            cartaoAtleta.appendChild(imagemAtleta);
-            cartaoAtleta.appendChild(detalhesAtleta);
-
-            containerElenco.appendChild(cartaoAtleta);
-
+            atletaCartao.appendChild(ateltaImagem);
+            atletaCartao.appendChild(atletaDetalhes);
+            containerElenco.appendChild(atletaCartao);
         });
+        document.getElementById('msg_carregando').style.display = 'none';
     })
-    .catch(error => {
-        console.error(`Erro ao buscar elenco ${genero}:`, error);
-    });
-}
-});
+ 
+    
+}});

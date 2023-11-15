@@ -1,54 +1,53 @@
 document.addEventListener("DOMContentLoaded", function(){
 
+    const params = new URLSearchParams(window.location.search);
+    const atletaId = params.get('id');
+    const atletaDetalhes = document.getElementById("atleta_detalhes");
+    const atletaImagem = document.getElementById("atleta_imagem");
+    const atletaNome = document.getElementById("atleta_nome");
+    const atletaPosicao = document.getElementById("atleta_posicao");
+    const atletaDescricao = document.getElementById("atleta_descricao");
+    const atletaNomeCompleto = document.getElementById("atleta_nome_completo");
+    const atletaNascimento = document.getElementById("atleta_nascimento");
+    const atletaAltura = document.getElementById("atleta_altura");
     const voltar = document.getElementById("voltar_pag");
     voltar.addEventListener("click", () => {
         window.location.href = `home.html`;
     });
 
-    const detalhes_atleta = document.getElementById("detalhes_atleta");
-    const imagem_atleta = document.getElementById("imagem_atleta");
-    const nome_atleta = document.getElementById("nome_atleta");
-    const posicao_atleta = document.getElementById("posicao_atleta");
-    const descricao_atleta = document.getElementById("descricao_atleta");
-    const nome_completo_atleta = document.getElementById("nome_completo_atleta");
-    const nascimento_atleta = document.getElementById("nascimento_atleta");
-    const altura_atleta = document.getElementById("altura_atleta");
-    
-    const params = new URLSearchParams(window.location.search);
-    const atleta_id = params.get('id');
-
     function buscaAtleta(id){
 
-        if(id > 60){
-            detalhes_atleta.innerHTML = "<p>Atleta não encontrado(a)!!!</p>";
-            detalhes_atleta.style.fontFamily = 'Alumni Sans Inline One, sans-serif';
-            detalhes_atleta.style.fontSize = '50px'
-            return;
-        }
+        document.getElementById('msg_carregando').style.display = 'block';
 
-        fetch(`https://botafogo-atletas.mange.li/${id}`)
-        .then(response => {
+        if(id <= 60){
+
+            fetch(`https://botafogo-atletas.mange.li/${id}`)
+            .then(response => {
             if (!response.ok){
                 throw new Error("Erro")
             }
             return response.json()
-        })
+            })
+            .then(atleta => {
+                atletaImagem.src = atleta.imagem;
+                atletaNome.textContent = `${atleta.nome}`;
+                atletaPosicao.textContent = `${atleta.posicao}`;
+                atletaDescricao.textContent = `${atleta.descricao}`;
+                atletaNomeCompleto.textContent = `NOME COMPLETO: ${atleta.nome_completo}`;
+                atletaNascimento.textContent = `NASCIMENTO: ${atleta.nascimento}`; 
+                atletaAltura.textContent = `ALTURA: ${atleta.altura}`;
+                document.getElementById('msg_carregando').style.display = 'none';
+            })
+        }
 
-        .then(atleta => {
-            imagem_atleta.src = atleta.imagem;
-            nome_atleta.textContent = `${atleta.nome}`;
-            posicao_atleta.textContent = `${atleta.posicao}`;
-            descricao_atleta.textContent = `${atleta.descricao}`;
-            nome_completo_atleta.textContent = `Nome Completo: ${atleta.nome_completo}`
-            nascimento_atleta.textContent = `Nascimento: ${atleta.nascimento}`; 
-            altura_atleta.textContent = `Altura: ${atleta.altura}`;
-        })
+        else{
+            atletaDetalhes.innerHTML = "<p>Atleta não encontrado(a)!!!</p>";
+            atletaDetalhes.style.fontFamily = 'Alumni Sans Inline One, sans-serif';
+            atletaDetalhes.style.fontSize = '50px'
 
-        .catch(error => {
-            console.error('Erro ao buscar detalhes do atleta:', error);
-            detalhes_atleta.innerHTML = "<p>Erro ao buscar detalhes do atleta.</p>";
-        });
+            document.getElementById('msg_carregando').style.display = 'none';
+            return;
+        }
     }
-
-    buscaAtleta(atleta_id);
+    buscaAtleta(atletaId);
 })
