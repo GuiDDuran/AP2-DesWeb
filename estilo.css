@@ -11,8 +11,6 @@ body{
     color: white;
 }
 
-
-
 /*Estilo da página de login*/
 #container_entrada {
     position: absolute;
@@ -26,10 +24,9 @@ body{
 }
 
 #informacoes_pag, #preencher_pag {
-    width: 50%; /* Ajuste conforme necessário */
+    width: 50%;
 }
 
-/* Estilos adicionais para o layout */
 #informacoes_pag { 
     padding: 10px;
 }
@@ -80,10 +77,6 @@ input[type="password"]{
     margin-top: 0px;
     margin-bottom: 0px;
  }
-
-
-
-
 
 /*Estilo da página principal*/
 header{
@@ -185,21 +178,18 @@ h1{
     max-width: 1200px;
 }
 
-/* Regra para uma coluna até 768px */
 @media (max-width: 768px) {
     #elenco {
         grid-template-columns: 1fr;
     }
 }
 
-/* Regra para duas colunas até 1024px */
 @media (min-width: 769px) and (max-width: 1024px) {
     #elenco {
         grid-template-columns: 1fr 1fr;
     }
 }
 
-/* Regra para quatro colunas depois de 1024px */
 @media (min-width: 1025px) {
     #elenco {
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -245,7 +235,6 @@ h1{
 }
 
 /*Estilo da página de detalhes*/
-
 #atleta_detalhes {
     display: flex;
     align-items: center;

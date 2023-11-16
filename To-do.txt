@@ -1,2 +1,1 @@
-Página de detalhes
-    -Não deve ser possível acessar a página de detalhes sem autorização.
+Todos os requisitos foram atendidos

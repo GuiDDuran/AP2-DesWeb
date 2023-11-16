@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    const audio = document.getElementById('audioPlayer');
+    audio.volume = 0.3;
+
     const autenticado = localStorage.getItem('autenticado');
 
     if (!autenticado || autenticado !== 'true') {
