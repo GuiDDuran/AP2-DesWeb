@@ -12,6 +12,13 @@ body{
 }
 
 /*Estilo da página de login*/
+
+#logo{
+    margin-top: 100px;
+    width: 250px;
+    height: 250px;
+}
+
 #container_entrada {
     position: absolute;
     display: flex;
@@ -35,9 +42,28 @@ body{
     padding: 20px;
 }
 
+#slogan{
+    margin-top: 300px;
+    text-align: center;
+    font-size: 20px;
+}
+
 @media (max-width: 768px) {
     #container_entrada {
         flex-direction: column;
+    }
+
+    #logo{
+        margin-top: 70px;
+        width: 200px;
+        height: 200px;
+    }
+
+    #slogan{
+
+        margin-top: 400px;
+        text-align: center;
+        font-size: 20px;
     }
 }
  
@@ -87,12 +113,23 @@ header{
     align-items: center;
 }
 
+#container_header{
+    display: flex;
+}
+
 h1{
     font-family: 'Alumni Sans Inline One', sans-serif;
     font-weight: normal;
     font-size: 42px;
-    margin: 0;
+    margin: 0px;
     padding: 10px;
+}
+
+#logo_header{
+    width: 50px;
+    height: 50px;
+    margin-top: 12px;
+    margin-left: 5px;
 }
 
 #logout{
@@ -121,13 +158,6 @@ h1{
     padding: 2%;
     margin-top: 20px;
     display: none;
-}
-
-#barra_escolhas{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 20px;
 }
 
 .btn-escolha{
@@ -165,6 +195,22 @@ h1{
 
     .btn-escolha{
         display: none;
+    }
+
+    #logo_header{
+        width: 50px;
+        height: 50px;
+        margin-top: 30px;
+        margin-right: 10px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    #logo_header{
+        width: 50px;
+        height: 50px;
+        margin-top: 12px;
+        margin-right: 10px;
     }
 }
 
@@ -213,7 +259,7 @@ h1{
     margin: 10px;
 }
 
-.saiba-mais{
+.veja-mais{
     color:black; 
     font-family: Alumni Sans Inline One, sans-serif; 
     font-size: 20px; 

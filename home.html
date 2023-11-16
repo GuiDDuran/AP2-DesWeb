@@ -8,17 +8,19 @@
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-
     <header>
-            <h1>Atletas Botafogo 2023-2</h1>
-            <audio id="audioPlayer" controls autoplay loop>
+            <div id="container_header">
+                <h1>Atletas Botafogo 2023-2</h1>
+                <img id="logo_header" src="LogoFogao2.png">
+            </div>
+            <audio id="audioPlayer" controls muted loop>
                 <source src="Hino do Botafogo.mp3" type="audio/mpeg">
                 Seu navegador não suporta o elemento de áudio.
             </audio>
             <button id="logout">Sair</button>
     </header>
     
-    <div id ="barra-escolhas">
+    <div id ="barra_escolhas">
         <button id="btn_masc" class="btn-escolha">Masculino</button>
         <button id="btn_fem" class="btn-escolha">Feminino</button>
         <button id="btn_all" class="btn-escolha">Elenco Completo</button>

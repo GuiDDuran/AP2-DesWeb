@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         containerElenco.appendChild(msgAutorizacao);
 
-        const barraEscolhas = document.getElementById("barra-escolhas");
+        const barraEscolhas = document.getElementById("barra_escolhas");
         barraEscolhas.style.display = 'none';
 
         const selectEscolhas = document.getElementById("select_escolhas");
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         atletaDetalhes.className = 'atleta-detalhes';
                         atletaDetalhes.innerHTML = ` 
                             <p class="nome-atleta">${atleta.nome}</p> 
-                            <p class="saiba-mais">Saiba mais</p>
+                            <p class="veja-mais">Veja mais</p>
                         `;
 
                         atletaCartao.appendChild(ateltaImagem);
