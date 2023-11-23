@@ -6,8 +6,8 @@ Reproduzir o comportamento da [página de exemplo](#página-de-exemplo).
 # Restrições
 1. CSS e Javascript devem ser em arquivos separados
 1. É preciso usar armazenamento local para viabilizar a solução de autorização
-1. A listagem de atletas e a página de detalhes só devem ser acessíveis a usuários autorizados :eyes:
-1. A senha deve estar disponível na página de entrada (é só uma demonstração) :relieved:
+1. A listagem de atletas e a página de detalhes só devem ser acessíveis a usuários autorizados
+1. A senha deve estar disponível na página de entrada (é só uma demonstração)
 1. A comparação entre as senhas deve usar um HASH md5 calculado pela biblioteca [md5](https://pajhome.org.uk/crypt/md5/)
 1. A página principal deve obter os elencos com chamadas, *obrigatoriamente*, aos end-points: 
    1. `https://botafogo-atletas.mange.li/all`
